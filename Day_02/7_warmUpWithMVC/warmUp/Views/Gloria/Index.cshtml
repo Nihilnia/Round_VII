@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("AddPeople", "Gloria", FormMethod.Post))
+{
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">UserName</label>
+        @Html.TextBox("UserName", null, null, new { @class = "form-control" })
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        @Html.TextBox("Password", null, null, new { @class = "form-control" })
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    @Html.Hidden("Username")
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+
+@using (Html.BeginForm("GetPeople", "Gloria", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-primary">Get People</button>
+}

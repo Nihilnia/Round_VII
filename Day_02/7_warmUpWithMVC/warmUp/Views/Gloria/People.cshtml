@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "People";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@using warmUp.Models.Database
+@model List<People>
+
+<h2>People</h2>
+
+<ul>
+    @foreach (var f in Model)
+    {
+        <li>Username: @f.UserName</li>
+        <li>Password: @f.Password</li>
+        if (@f.isActive)
+        {
+            <li>Active</li>
+        }
+        else { 
+            <li>Not Active</li>
+        }
+
+    }
+</ul>
