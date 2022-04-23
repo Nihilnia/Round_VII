@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if(TempData["Resultat"] != null)
+{
+    <h2>@TempData["Resultat"]</h2>
+}
+
+<form method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">THE MF CODE</label>
+    <input type="text" class="form-control" name = "encryptedMessage" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Give me your mf encrypted code you kunt.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

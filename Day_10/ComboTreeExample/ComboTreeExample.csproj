@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="wwwroot\js\comboTreePlugin.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\CTTemplate\comboTreePlugin.js" />
+    <None Include="wwwroot\CTTemplate\icontains.js" />
+    <None Include="wwwroot\CTTemplate\jquery-3.6.0.min.js" />
+    <None Include="wwwroot\CTTemplate\LICENSE" />
+    <None Include="wwwroot\CTTemplate\README.md" />
+    <None Include="wwwroot\CTTemplate\Sample.html" />
+    <None Include="wwwroot\CTTemplate\style.css" />
+    <None Include="wwwroot\js\comboTreePlugin.js" />
+  </ItemGroup>
+
+</Project>

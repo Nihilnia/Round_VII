@@ -1,0 +1,43 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Index- Delete</h2>
+
+<form id="Gloria" asp-action="Delete" style="color: aliceblue; width: 50%; margin: auto;">
+  <div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control"/>
+    <div id="nameHelp" class="form-text">Name of the record.</div>
+  </div>
+  <div class="mb-3">
+    <label asp-for="DisplayOrder" class="form-label"></label>
+    <input asp-for="DisplayOrder" class="form-control"/>
+    <div id="displayOrderHelp" class="form-text">Display Order of the record.</div>
+  </div>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Delete <i class="fa-solid fa-trash-can"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="color: black;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">One last step</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete this record?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Delete <i class="fa-solid fa-square-plus"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

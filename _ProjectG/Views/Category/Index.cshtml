@@ -1,0 +1,35 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Index- Category</h2>
+<i class="bi-alarm"></i>
+<table class="table" style="color: aliceblue; width: 50%; margin: auto;">
+    <a asp-action="Create" asp-controller="Category"><button type="button" class="btn btn-primary">Create <i class="fa-solid fa-square-plus"></i></button></a>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Display Order</th>
+      <th scope="col">Created Date- Time</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach(var f in Model)
+        {
+        <tr>
+          <th scope="row">@f.ID</th>
+          <td>@f.Name</td>
+          <td>@f.DisplayOrder</td>
+          <td>@f.CreatedDateTime</td>
+          <td>
+              <a asp-action="Edit" asp-controller="Category" asp-route-id = "@f.ID"><button type="button" class="btn btn-warning">Edit <i class="fa-solid fa-pen-to-square"></i></button></a>
+              <a asp-action="Delete" asp-controller="Category" asp-route-id = "@f.ID"><button type="button" class="btn btn-danger">Delete <i class="fa-solid fa-trash-can"></i></button></a>
+          </td>
+        </tr>
+        }
+  </tbody>
+</table>

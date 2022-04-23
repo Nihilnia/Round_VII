@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<head>
+<script src="../ComboTree/jquery-3.6.0.min.js"></script>
+<script src="comboTreePlugin.js"></script>
+</head>
+
+<body>
+    <input type="text" id="example" placeholder="Select">
+
+
+    <script>
+    $('#example').comboTree({
+      source : myData,
+      isMultiple: true
+    });
+    </script>
+</body>

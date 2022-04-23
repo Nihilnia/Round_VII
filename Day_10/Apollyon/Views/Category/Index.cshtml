@@ -1,0 +1,35 @@
+﻿@model List<Category>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Category - Index</h1>
+
+<table class="table" style="color: aliceblue; width: 50%; margin: auto;">
+  <a asp-controller="Category" asp-action="Create">Create</a>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Display Order</th>
+      <th scope="col">Created</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach(var f in Model)
+        {
+            <tr>
+              <th scope="row">@f.ID</th>
+              <td>@f.Name</td>
+              <td>@f.DisplayOrder</td>
+              <td>@f.CreatedDateTime</td>
+              <td><a asp-controller="Category" asp-action="Edit" asp-route-id="@f.ID">Edit</a></td>
+            </tr>
+        }
+        
+  </tbody>
+</table>

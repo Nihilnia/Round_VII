@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using CRUDOps.Models.Database
+@model List<User>
+
+<h2>Gloria- Index</h2>
+
+<table class="table table-success" style="width: 500px;">
+    <thead>
+        <tr class="table-success">
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var f in Model)
+        {
+
+        }
+
+        @for (int f = 0; f < Model.Count; f++)
+        {
+            <tr>
+                <th scope="row"><i class="fa-solid fa-skull">@Model[f].ID </i>  </th>
+                <td scope="row">@Model[f].UserName <button type="button" id="btnColor" class="btn btn-danger">Change color</button></td>
+                <td scope="row">@Model[f].Password <button type="button" id="btnText" class="btn btn-danger">EHH</button></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+<script>
+
+    var btnColor = document.querySelectorAll("#btnColor");
+
+    btnColor.forEach(function (x, y) {
+        x.addEventListener('click', function () {
+            console.log(y, "xx");
+            x.setAttribute("class", "btn btn-warning");
+        });
+    });
+
+
+    var btnText = document.querySelectorAll("#btnText");
+    btnText.forEach(function (a, b) {
+        a.addEventListener('click', function () {
+            console.log(`Item ${a.textContent}' s text changed to Gloria\n`);
+            a.textContent = "Gloria";
+        });
+    });
+
+
+
+</script>
