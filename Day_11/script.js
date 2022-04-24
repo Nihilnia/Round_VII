@@ -12,4 +12,13 @@ $(document).ready(function () {
     }, function () {
         console.log("You' ve out!");
     });
+
+    var inp = $("#inp01");
+    inp.focus(function () {
+        console.log("You' re in input.");
+    });
+    inp.change(function () {
+        console.log("Value is changed.");
+    });
+
 });
